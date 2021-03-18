@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Coupon Manager:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Coupon_Manager_jar</output-path>
+    <root id="archive" name="Coupon Manager.jar">
+      <element id="module-output" name="Coupon Manager" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/sqlite-jdbc-3.30.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/mail.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../Email/src/activation.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

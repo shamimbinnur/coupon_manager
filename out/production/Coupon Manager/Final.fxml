@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="521.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
+   <children>
+      <Rectangle height="452.0" layoutY="103.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="890.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#85adff1a" />
+                  <Stop color="#5264874a" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="WHITE" height="50.0" layoutX="77.0" layoutY="289.0" stroke="#979797" strokeType="INSIDE" width="233.0" />
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="WHITE" height="50.0" layoutX="77.0" layoutY="196.0" stroke="#979797" strokeType="INSIDE" width="233.0" />
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="WHITE" height="33.0" layoutX="78.0" layoutY="158.0" stroke="#979797" strokeType="INSIDE" width="233.0" />
+      <Rectangle fx:id="validityRect" arcHeight="10.0" arcWidth="10.0" fill="WHITE" height="33.0" layoutX="78.0" layoutY="120.0" stroke="#979797" strokeType="INSIDE" width="233.0" />
+      <Rectangle arcHeight="18.0" arcWidth="18.0" fill="#8efad1" height="78.0" layoutX="379.0" layoutY="120.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="1.5" width="136.0" />
+      <TableView layoutX="378.0" layoutY="214.0" prefHeight="300.0" prefWidth="470.0">
+        <columns>
+          <TableColumn prefWidth="32.0" text="No" />
+            <TableColumn prefWidth="124.0" text="Coupon Code" />
+          <TableColumn prefWidth="96.0" text="Customer Name" />
+            <TableColumn text="Discount (%)" />
+            <TableColumn prefWidth="87.0" text="Claiming Date" />
+            <TableColumn prefWidth="49.0" text="Status" />
+        </columns>
+      </TableView>
+      <Rectangle arcHeight="18.0" arcWidth="18.0" fill="#99ff78" height="78.0" layoutX="544.0" layoutY="120.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="1.5" width="136.0" />
+      <Rectangle arcHeight="18.0" arcWidth="18.0" fill="#fff275" height="78.0" layoutX="709.0" layoutY="120.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="1.5" width="136.0" />
+      <Rectangle fill="#ff4268" height="100.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="890.0" />
+      <Rectangle height="5.0" layoutY="100.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="890.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#ff8585" />
+                  <Stop color="#e7bdff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle height="5.0" layoutY="550.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="890.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#ff44001a" />
+                  <Stop color="#1a6affac" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <TextField fx:id="couponField" layoutX="77.0" layoutY="354.0" prefHeight="27.0" prefWidth="156.0" promptText="Coupon Code">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font></TextField>
+      <TextField fx:id="quantityField" layoutX="156.0" layoutY="471.0" prefHeight="24.0" prefWidth="77.0" promptText="Quantity">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <Button layoutX="77.0" layoutY="421.0" mnemonicParsing="false" onAction="#check_validity" prefHeight="26.0" prefWidth="50.0" style="-fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: grey; -fx-background-color: #8efad1;" text="Check">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Button layoutX="183.0" layoutY="421.0" mnemonicParsing="false" onAction="#claim" prefHeight="26.0" prefWidth="50.0" style="-fx-border-color: grey; -fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: #fff275;" text="Claim">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Text fill="#616161" layoutX="419.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stock">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="stockText" fill="#616161" layoutX="387.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="120.4453125">
+         <font>
+            <Font name="Berlin Sans FB" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#616161" layoutX="570.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booked">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="bookedText" fill="#616161" layoutX="552.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="120.4453125">
+         <font>
+            <Font name="Berlin Sans FB" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="#616161" layoutX="736.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Claimed">
+         <font>
+            <Font name="Berlin Sans FB" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="claimedText" fill="#616161" layoutX="717.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="120.4453125">
+         <font>
+            <Font name="Berlin Sans FB" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="79.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Coupon Manager" wrappingWidth="342.0">
+         <font>
+            <Font name="Berlin Sans FB" size="44.0" />
+         </font>
+      </Text>
+      <Text fill="#5e5e5e" layoutX="84.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Validity : " wrappingWidth="83.14453125">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Text>
+      <Text fill="#4d4d4d" layoutX="87.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status : " wrappingWidth="70.0">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Text>
+      <Text fill="#4d4d4d" layoutX="84.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Claimed on : " wrappingWidth="142.15234375">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Text>
+      <Text fill="#4d4d4d" layoutX="85.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer name:" wrappingWidth="156.0">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="WHITE" height="33.0" layoutX="78.0" layoutY="251.0" stroke="#979797" strokeType="INSIDE" width="233.0" />
+      <Text fill="#4d4d4d" layoutX="85.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount : " wrappingWidth="90.0">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Text>
+      <TextField fx:id="discountField" layoutX="77.0" layoutY="471.0" prefHeight="24.0" prefWidth="77.0" promptText="Discount (%)">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </TextField>
+      <Button layoutX="77.0" layoutY="500.0" mnemonicParsing="false" onAction="#generateCoupon" prefHeight="22.0" prefWidth="156.0" style="-fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: grey;" text="GENERATE">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Button layoutX="130.0" layoutY="421.0" mnemonicParsing="false" onAction="#book" prefHeight="26.0" prefWidth="50.0" style="-fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: grey; -fx-background-color: #99ff78;" text="Book">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Text fx:id="validityText" fill="#5e5e5e" layoutX="169.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="127.15234375">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Text>
+      <Text fx:id="statusText" fill="#4d4d4d" layoutX="162.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="96.0">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Text>
+      <Text fx:id="dateText" fill="#4d4d4d" layoutX="199.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="103.0">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="discountText" fill="#4d4d4d" layoutX="175.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="90.0">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Text>
+      <Text fx:id="customerNameText" fill="#4d4d4d" layoutX="85.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="156.0">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Text>
+      <Button layoutX="238.0" layoutY="355.0" mnemonicParsing="false" onAction="#reset" prefHeight="23.0" prefWidth="16.0" style="-fx-background-radius: 360; -fx-background-color: ff4268;" text="R" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="854.0" layoutY="286.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="16.0" style="-fx-background-color: #8efad1;" textFill="#8efad1">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="854.0" layoutY="327.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="16.0" style="-fx-background-color: #99ff78;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="854.0" layoutY="368.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="16.0" style="-fx-background-color: #fff275;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="854.0" layoutY="411.0" mnemonicParsing="false" onAction="#delete" prefHeight="33.0" prefWidth="16.0" style="-fx-background-color: #f1224f;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField fx:id="nameField" layoutX="76.0" layoutY="388.0" prefHeight="27.0" prefWidth="103.0" promptText="Customer Name">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </TextField>
+      <DatePicker fx:id="dateField" layoutX="182.0" layoutY="389.0" prefHeight="25.0" prefWidth="35.0" />
+      <Text fill="#4d4d4d" layoutX="84.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expire on :" wrappingWidth="103.0">
+         <font>
+            <Font name="Berlin Sans FB" size="21.0" />
+         </font>
+      </Text>
+      <Text fx:id="exText" fill="#4d4d4d" layoutX="181.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="120.4453125">
+         <font>
+            <Font name="Berlin Sans FB" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
