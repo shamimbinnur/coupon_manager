@@ -1,3 +1,10 @@
+// 	AUTHOR:		SHAMIM BIN NUR
+// 	GITHUB:		https://github.com/shamimbinnur
+// 	LINKEDIN:	https://www.linkedin.com/in/shamimbinnur
+// 	MAIL:		iamshamimbn@gmail.com
+// 	SITE:		www.shamimbinnur.me
+
+
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
